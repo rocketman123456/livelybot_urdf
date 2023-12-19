@@ -13,7 +13,7 @@
         <plugin name="3dplot" filename="libLinkPlot3DPlugin.so">
             <frequency>10</frequency>
             <plot>
-                <link>base</link>
+                <link>base_link</link>
                 <pose>0 0 0 0 0 0</pose>
                 <material>Gazebo/Yellow</material>
             </plot>
@@ -22,8 +22,8 @@
 
     <gazebo>
         <plugin filename="libgazebo_ros_force.so" name="gazebo_ros_force">
-            <bodyName>trunk</bodyName>
-            <topicName>/apply_force/trunk</topicName>
+            <bodyName>base_link</bodyName>
+            <topicName>/apply_force/base_link</topicName>
         </plugin>
     </gazebo>
 
@@ -53,7 +53,7 @@
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
 
-    <gazebo reference="trunk">
+    <gazebo reference="base_link">
         <mu1>0.2</mu1>
         <mu2>0.2</mu2>
         <material>Gazebo/DarkGrey</material>
@@ -62,7 +62,6 @@
      <gazebo reference="trunkcol">
         <mu1>0.2</mu1>
         <mu2>0.2</mu2>
-       
     </gazebo>
 
     <gazebo reference="stick_link">

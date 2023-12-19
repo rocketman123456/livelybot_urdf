@@ -6,8 +6,6 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /Imu1
-        - /Imu1/Status1
       Splitter Ratio: 0.5
     Tree Height: 549
   - Class: rviz/Selection
@@ -113,17 +111,12 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        base:
+        base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
         imu_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        trunk:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -134,21 +127,11 @@ Visualization Manager:
       Update Interval: 0
       Value: true
       Visual Enabled: true
-    - Alpha: 0.30000001192092896
-      Class: rviz_plugin_tutorials/Imu
-      Color: 204; 51; 204
-      Enabled: true
-      History Length: 25
-      Name: Imu
-      Queue Size: 1
-      Topic: /lvbot_imu
-      Unreliable: false
-      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: trunk
+    Fixed Frame: base_link
     Frame Rate: 30
   Name: root
   Tools:
@@ -172,7 +155,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 7.75144100189209
+      Distance: 1.0897014141082764
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -180,17 +163,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: 0.014836481772363186
-        Y: 0.07287393510341644
-        Z: -0.06202063336968422
+        X: 0.18542107939720154
+        Y: -0.0029803984798491
+        Z: -0.10136128216981888
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5453981757164001
+      Pitch: 0.3103984296321869
       Target Frame: <Fixed Frame>
-      Yaw: 5.548580169677734
+      Yaw: 0.4403907060623169
     Saved: ~
 Window Geometry:
   Displays:
@@ -208,5 +191,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1200
-  X: 501
-  Y: 38
+  X: 664
+  Y: 27
