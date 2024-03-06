@@ -33,7 +33,7 @@ PROTO LivelybotUrdf [
           metalness 0
         }
         geometry DEF body Mesh {
-          url "D:\Program\LivelybotCode/livelybot_urdf/meshes/body.STL"
+          url "../meshes/body.STL"
         }
       }
       HingeJoint {
@@ -61,7 +61,7 @@ PROTO LivelybotUrdf [
                 metalness 0
               }
               geometry DEF youshou1 Mesh {
-                url "D:\Program\LivelybotCode/livelybot_urdf/meshes/youshou1.STL"
+                url "../meshes/youshou1.STL"
               }
             }
             HingeJoint {
@@ -89,7 +89,7 @@ PROTO LivelybotUrdf [
                       metalness 0
                     }
                     geometry DEF youshou2 Mesh {
-                      url "D:\Program\LivelybotCode/livelybot_urdf/meshes/youshou2.STL"
+                      url "../meshes/youshou2.STL"
                     }
                   }
                   HingeJoint {
@@ -117,7 +117,7 @@ PROTO LivelybotUrdf [
                             metalness 0
                           }
                           geometry DEF youshou3 Mesh {
-                            url "D:\Program\LivelybotCode/livelybot_urdf/meshes/youshou3.STL"
+                            url "../meshes/youshou3.STL"
                           }
                         }
                         HingeJoint {
@@ -145,7 +145,7 @@ PROTO LivelybotUrdf [
                                   metalness 0
                                 }
                                 geometry DEF youshou4 Mesh {
-                                  url "D:\Program\LivelybotCode/livelybot_urdf/meshes/youshou4.STL"
+                                  url "../meshes/youshou4.STL"
                                 }
                               }
                             ]
@@ -229,7 +229,7 @@ PROTO LivelybotUrdf [
                 metalness 0
               }
               geometry DEF zuoshou1 Mesh {
-                url "D:\Program\LivelybotCode/livelybot_urdf/meshes/zuoshou1.STL"
+                url "../meshes/zuoshou1.STL"
               }
             }
             HingeJoint {
@@ -257,7 +257,7 @@ PROTO LivelybotUrdf [
                       metalness 0
                     }
                     geometry DEF zuoshou2 Mesh {
-                      url "D:\Program\LivelybotCode/livelybot_urdf/meshes/zuoshou2.STL"
+                      url "../meshes/zuoshou2.STL"
                     }
                   }
                   HingeJoint {
@@ -285,7 +285,7 @@ PROTO LivelybotUrdf [
                             metalness 0
                           }
                           geometry DEF zuoshou3 Mesh {
-                            url "D:\Program\LivelybotCode/livelybot_urdf/meshes/zuoshou3.STL"
+                            url "../meshes/zuoshou3.STL"
                           }
                         }
                         HingeJoint {
@@ -313,7 +313,7 @@ PROTO LivelybotUrdf [
                                   metalness 0
                                 }
                                 geometry DEF zuoshou4 Mesh {
-                                  url "D:\Program\LivelybotCode/livelybot_urdf/meshes/zuoshou4.STL"
+                                  url "../meshes/zuoshou4.STL"
                                 }
                               }
                             ]
@@ -397,7 +397,7 @@ PROTO LivelybotUrdf [
                 metalness 0
               }
               geometry DEF youtui1 Mesh {
-                url "D:\Program\LivelybotCode/livelybot_urdf/meshes/youtui1.STL"
+                url "../meshes/youtui1.STL"
               }
             }
             HingeJoint {
@@ -425,7 +425,7 @@ PROTO LivelybotUrdf [
                       metalness 0
                     }
                     geometry DEF youtui2 Mesh {
-                      url "D:\Program\LivelybotCode/livelybot_urdf/meshes/youtui2.STL"
+                      url "../meshes/youtui2.STL"
                     }
                   }
                   HingeJoint {
@@ -453,7 +453,7 @@ PROTO LivelybotUrdf [
                             metalness 0
                           }
                           geometry DEF youtui3 Mesh {
-                            url "D:\Program\LivelybotCode/livelybot_urdf/meshes/youtui3.STL"
+                            url "../meshes/youtui3.STL"
                           }
                         }
                         HingeJoint {
@@ -481,7 +481,7 @@ PROTO LivelybotUrdf [
                                   metalness 0
                                 }
                                 geometry DEF youtui4 Mesh {
-                                  url "D:\Program\LivelybotCode/livelybot_urdf/meshes/youtui4.STL"
+                                  url "../meshes/youtui4.STL"
                                 }
                               }
                               HingeJoint {
@@ -509,7 +509,7 @@ PROTO LivelybotUrdf [
                                         metalness 0
                                       }
                                       geometry DEF youtui5 Mesh {
-                                        url "D:\Program\LivelybotCode/livelybot_urdf/meshes/youtui5.STL"
+                                        url "../meshes/youtui5.STL"
                                       }
                                     }
                                     HingeJoint {
@@ -537,7 +537,7 @@ PROTO LivelybotUrdf [
                                               metalness 0
                                             }
                                             geometry DEF youtui6 Mesh {
-                                              url "D:\Program\LivelybotCode/livelybot_urdf/meshes/youtui6.STL"
+                                              url "../meshes/youtui6.STL"
                                             }
                                           }
                                         ]
@@ -649,7 +649,7 @@ PROTO LivelybotUrdf [
                 metalness 0
               }
               geometry DEF zuotui1 Mesh {
-                url "D:\Program\LivelybotCode/livelybot_urdf/meshes/zuotui1.STL"
+                url "../meshes/zuotui1.STL"
               }
             }
             HingeJoint {
@@ -677,7 +677,7 @@ PROTO LivelybotUrdf [
                       metalness 0
                     }
                     geometry DEF zuotui2 Mesh {
-                      url "D:\Program\LivelybotCode/livelybot_urdf/meshes/zuotui2.STL"
+                      url "../meshes/zuotui2.STL"
                     }
                   }
                   HingeJoint {
@@ -705,7 +705,7 @@ PROTO LivelybotUrdf [
                             metalness 0
                           }
                           geometry DEF zuotui3 Mesh {
-                            url "D:\Program\LivelybotCode/livelybot_urdf/meshes/zuotui3.STL"
+                            url "../meshes/zuotui3.STL"
                           }
                         }
                         HingeJoint {
@@ -733,7 +733,7 @@ PROTO LivelybotUrdf [
                                   metalness 0
                                 }
                                 geometry DEF zuotui4 Mesh {
-                                  url "D:\Program\LivelybotCode/livelybot_urdf/meshes/zuotui4.STL"
+                                  url "../meshes/zuotui4.STL"
                                 }
                               }
                               HingeJoint {
@@ -761,7 +761,7 @@ PROTO LivelybotUrdf [
                                         metalness 0
                                       }
                                       geometry DEF zuotui5 Mesh {
-                                        url "D:\Program\LivelybotCode/livelybot_urdf/meshes/zuotui5.STL"
+                                        url "../meshes/zuotui5.STL"
                                       }
                                     }
                                     HingeJoint {
@@ -789,7 +789,7 @@ PROTO LivelybotUrdf [
                                               metalness 0
                                             }
                                             geometry DEF zuotui6 Mesh {
-                                              url "D:\Program\LivelybotCode/livelybot_urdf/meshes/zuotui6.STL"
+                                              url "../meshes/zuotui6.STL"
                                             }
                                           }
                                         ]
