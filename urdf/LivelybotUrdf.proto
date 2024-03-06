@@ -1,0 +1,892 @@
+#VRML_SIM R2023b utf8
+# license: Apache License 2.0
+# license url: http://www.apache.org/licenses/LICENSE-2.0
+# This is a proto file for Webots for the LivelybotUrdf
+# Extracted from: D:\Program\LivelybotCode\livelybot_urdf\urdf\livelybot_urdf.urdf
+
+PROTO LivelybotUrdf [
+  field  SFVec3f     translation     0 0 0
+  field  SFRotation  rotation        0 0 1 0
+  field  SFString    name            "LivelybotUrdf"  # Is `Robot.name`.
+  field  SFString    controller      "void"           # Is `Robot.controller`.
+  field  MFString    controllerArgs  []               # Is `Robot.controllerArgs`.
+  field  SFString    customData      ""               # Is `Robot.customData`.
+  field  SFBool      supervisor      FALSE            # Is `Robot.supervisor`.
+  field  SFBool      synchronization TRUE             # Is `Robot.synchronization`.
+  field  SFBool      selfCollision   FALSE            # Is `Robot.selfCollision`.
+]
+{
+  Robot {
+    translation IS translation
+    rotation IS rotation
+    controller IS controller
+    controllerArgs IS controllerArgs
+    customData IS customData
+    supervisor IS supervisor
+    synchronization IS synchronization
+    selfCollision IS selfCollision
+    children [
+      Shape {
+        appearance DEF body_material PBRAppearance {
+          baseColor 0.752941 0.752941 0.752941
+          roughness 1.000000
+          metalness 0
+        }
+        geometry DEF body Mesh {
+          url "D:\Program\LivelybotCode/livelybot_urdf/meshes/body.STL"
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis 1.000000 0.000000 -0.000000
+          anchor 0.085579 -0.013845 -0.036500
+        }
+        device [
+          RotationalMotor {
+            name "youshou1"
+            maxTorque 10000
+          }
+          PositionSensor {
+            name "youshou1_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation 0.085579 -0.013845 -0.036500
+          rotation 0.577350 0.577350 0.577350 2.094395
+          children [
+            Shape {
+              appearance DEF youshou1_material PBRAppearance {
+                baseColor 0.752941 0.752941 0.752941
+                roughness 1.000000
+                metalness 0
+              }
+              geometry DEF youshou1 Mesh {
+                url "D:\Program\LivelybotCode/livelybot_urdf/meshes/youshou1.STL"
+              }
+            }
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                axis -1.000000 0.000000 0.000000
+                anchor 0.031528 0.001927 0.031921
+              }
+              device [
+                RotationalMotor {
+                  name "youshou2"
+                  maxTorque 10000
+                }
+                PositionSensor {
+                  name "youshou2_sensor"
+                }
+              ]
+              endPoint Solid {
+                translation 0.031528 0.001927 0.031921
+                rotation 0.000000 1.000000 0.000000 1.570796
+                children [
+                  Shape {
+                    appearance DEF youshou2_material PBRAppearance {
+                      baseColor 0.752941 0.752941 0.752941
+                      roughness 1.000000
+                      metalness 0
+                    }
+                    geometry DEF youshou2 Mesh {
+                      url "D:\Program\LivelybotCode/livelybot_urdf/meshes/youshou2.STL"
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.000000 -1.000000 -0.000000
+                      anchor 0.000000 -0.070927 -0.029182
+                    }
+                    device [
+                      RotationalMotor {
+                        name "youshou3"
+                        maxTorque 10000
+                      }
+                      PositionSensor {
+                        name "youshou3_sensor"
+                      }
+                    ]
+                    endPoint Solid {
+                      translation 0.000000 -0.070927 -0.029182
+                      rotation 1.000000 0.000000 0.000000 1.570796
+                      children [
+                        Shape {
+                          appearance DEF youshou3_material PBRAppearance {
+                            baseColor 0.752941 0.752941 0.752941
+                            roughness 1.000000
+                            metalness 0
+                          }
+                          geometry DEF youshou3 Mesh {
+                            url "D:\Program\LivelybotCode/livelybot_urdf/meshes/youshou3.STL"
+                          }
+                        }
+                        HingeJoint {
+                          jointParameters HingeJointParameters {
+                            axis 1.000000 0.000000 0.000000
+                            anchor -0.024079 -0.002345 0.096000
+                          }
+                          device [
+                            RotationalMotor {
+                              name "youshou4"
+                              maxTorque 10000
+                            }
+                            PositionSensor {
+                              name "youshou4_sensor"
+                            }
+                          ]
+                          endPoint Solid {
+                            translation -0.024079 -0.002345 0.096000
+                            rotation -0.577350 -0.577350 0.577350 2.094395
+                            children [
+                              Shape {
+                                appearance DEF youshou4_material PBRAppearance {
+                                  baseColor 0.752941 0.752941 0.752941
+                                  roughness 1.000000
+                                  metalness 0
+                                }
+                                geometry DEF youshou4 Mesh {
+                                  url "D:\Program\LivelybotCode/livelybot_urdf/meshes/youshou4.STL"
+                                }
+                              }
+                            ]
+                            name "youshou4"
+                            boundingObject USE youshou4
+                            physics Physics {
+                              density -1
+                              mass 0.049069
+                              centerOfMass [ 0.042405 0.000000 -0.009453 ]
+                              inertiaMatrix [
+                                7.277133e-06 2.913462e-05 2.652483e-05
+                                -8.612655e-13 4.180408e-06 1.721728e-13
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                      name "youshou3"
+                      boundingObject USE youshou3
+                      physics Physics {
+                        density -1
+                        mass 0.124842
+                        centerOfMass [ -0.002899 -0.000000 0.073991 ]
+                        inertiaMatrix [
+                          2.604654e-05 2.328450e-05 2.193271e-05
+                          -6.282401e-13 1.292982e-07 -1.208823e-13
+                        ]
+                      }
+                    }
+                  }
+                ]
+                name "youshou2"
+                boundingObject USE youshou2
+                physics Physics {
+                  density -1
+                  mass 0.140066
+                  centerOfMass [ -0.000000 -0.040200 -0.013569 ]
+                  inertiaMatrix [
+                    3.997216e-05 2.784435e-05 3.969473e-05
+                    1.441070e-20 -1.841313e-21 3.382098e-06
+                  ]
+                }
+              }
+            }
+          ]
+          name "youshou1"
+          boundingObject USE youshou1
+          physics Physics {
+            density -1
+            mass 0.098109
+            centerOfMass [ 0.006982 -0.000000 0.024589 ]
+            inertiaMatrix [
+              3.053330e-05 2.967268e-05 2.481251e-05
+              1.376661e-20 -4.305760e-06 1.228814e-20
+            ]
+          }
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis -1.000000 -0.000000 -0.000000
+          anchor -0.085579 -0.013845 -0.036500
+        }
+        device [
+          RotationalMotor {
+            name "zuoshou1"
+            maxTorque 10000
+          }
+          PositionSensor {
+            name "zuoshou1_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation -0.085579 -0.013845 -0.036500
+          rotation -0.577350 -0.577350 0.577350 2.094395
+          children [
+            Shape {
+              appearance DEF zuoshou1_material PBRAppearance {
+                baseColor 0.752941 0.752941 0.752941
+                roughness 1.000000
+                metalness 0
+              }
+              geometry DEF zuoshou1 Mesh {
+                url "D:\Program\LivelybotCode/livelybot_urdf/meshes/zuoshou1.STL"
+              }
+            }
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                axis -1.000000 0.000000 0.000000
+                anchor 0.031528 -0.001927 0.031921
+              }
+              device [
+                RotationalMotor {
+                  name "zuoshou2"
+                  maxTorque 10000
+                }
+                PositionSensor {
+                  name "zuoshou2_sensor"
+                }
+              ]
+              endPoint Solid {
+                translation 0.031528 -0.001927 0.031921
+                rotation 0.000000 1.000000 0.000000 1.570796
+                children [
+                  Shape {
+                    appearance DEF zuoshou2_material PBRAppearance {
+                      baseColor 0.752941 0.752941 0.752941
+                      roughness 1.000000
+                      metalness 0
+                    }
+                    geometry DEF zuoshou2 Mesh {
+                      url "D:\Program\LivelybotCode/livelybot_urdf/meshes/zuoshou2.STL"
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.000000 1.000000 -0.000000
+                      anchor 0.000000 0.070927 -0.029182
+                    }
+                    device [
+                      RotationalMotor {
+                        name "zuoshou3"
+                        maxTorque 10000
+                      }
+                      PositionSensor {
+                        name "zuoshou3_sensor"
+                      }
+                    ]
+                    endPoint Solid {
+                      translation 0.000000 0.070927 -0.029182
+                      rotation -1.000000 0.000000 0.000000 1.570796
+                      children [
+                        Shape {
+                          appearance DEF zuoshou3_material PBRAppearance {
+                            baseColor 0.752941 0.752941 0.752941
+                            roughness 1.000000
+                            metalness 0
+                          }
+                          geometry DEF zuoshou3 Mesh {
+                            url "D:\Program\LivelybotCode/livelybot_urdf/meshes/zuoshou3.STL"
+                          }
+                        }
+                        HingeJoint {
+                          jointParameters HingeJointParameters {
+                            axis 1.000000 -0.000000 0.000000
+                            anchor -0.024152 0.001401 0.096000
+                          }
+                          device [
+                            RotationalMotor {
+                              name "zuoshou4"
+                              maxTorque 10000
+                            }
+                            PositionSensor {
+                              name "zuoshou4_sensor"
+                            }
+                          ]
+                          endPoint Solid {
+                            translation -0.024152 0.001401 0.096000
+                            rotation 0.577350 -0.577350 -0.577350 2.094395
+                            children [
+                              Shape {
+                                appearance DEF zuoshou4_material PBRAppearance {
+                                  baseColor 0.752941 0.752941 0.752941
+                                  roughness 1.000000
+                                  metalness 0
+                                }
+                                geometry DEF zuoshou4 Mesh {
+                                  url "D:\Program\LivelybotCode/livelybot_urdf/meshes/zuoshou4.STL"
+                                }
+                              }
+                            ]
+                            name "zuoshou4"
+                            boundingObject USE zuoshou4
+                            physics Physics {
+                              density -1
+                              mass 0.049069
+                              centerOfMass [ 0.041461 0.000000 -0.009527 ]
+                              inertiaMatrix [
+                                7.277133e-06 2.913462e-05 2.652483e-05
+                                -1.592909e-12 4.180409e-06 8.396552e-13
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                      name "zuoshou3"
+                      boundingObject USE zuoshou3
+                      physics Physics {
+                        density -1
+                        mass 0.124842
+                        centerOfMass [ -0.002899 -0.000000 0.073991 ]
+                        inertiaMatrix [
+                          2.604654e-05 2.328450e-05 2.193271e-05
+                          3.163486e-13 1.293004e-07 5.608422e-13
+                        ]
+                      }
+                    }
+                  }
+                ]
+                name "zuoshou2"
+                boundingObject USE zuoshou2
+                physics Physics {
+                  density -1
+                  mass 0.140066
+                  centerOfMass [ 0.000000 0.040200 -0.013569 ]
+                  inertiaMatrix [
+                    3.997216e-05 2.784435e-05 3.969473e-05
+                    3.592105e-20 -6.813692e-21 -3.382098e-06
+                  ]
+                }
+              }
+            }
+          ]
+          name "zuoshou1"
+          boundingObject USE zuoshou1
+          physics Physics {
+            density -1
+            mass 0.093672
+            centerOfMass [ 0.006209 0.000000 0.025216 ]
+            inertiaMatrix [
+              2.295511e-05 2.019306e-05 1.971677e-05
+              -1.927447e-20 -1.292994e-07 1.763643e-22
+            ]
+          }
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis 0.000000 -0.000000 1.000000
+          anchor 0.075000 -0.008363 -0.237429
+        }
+        device [
+          RotationalMotor {
+            name "youtui1"
+            maxTorque 10000
+          }
+          PositionSensor {
+            name "youtui1_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation 0.075000 -0.008363 -0.237429
+          rotation -1.000000 0.000000 0.000000 3.141593
+          children [
+            Shape {
+              appearance DEF youtui1_material PBRAppearance {
+                baseColor 0.752941 0.752941 0.752941
+                roughness 1.000000
+                metalness 0
+              }
+              geometry DEF youtui1 Mesh {
+                url "D:\Program\LivelybotCode/livelybot_urdf/meshes/youtui1.STL"
+              }
+            }
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                axis 0.000000 1.000000 0.000000
+                anchor 0.000000 0.038757 0.052571
+              }
+              device [
+                RotationalMotor {
+                  name "youtui2"
+                  maxTorque 10000
+                }
+                PositionSensor {
+                  name "youtui2_sensor"
+                }
+              ]
+              endPoint Solid {
+                translation 0.000000 0.038757 0.052571
+                rotation 1.000000 0.000000 0.000000 1.570796
+                children [
+                  Shape {
+                    appearance DEF youtui2_material PBRAppearance {
+                      baseColor 0.752941 0.752941 0.752941
+                      roughness 1.000000
+                      metalness 0
+                    }
+                    geometry DEF youtui2 Mesh {
+                      url "D:\Program\LivelybotCode/livelybot_urdf/meshes/youtui2.STL"
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 1.000000 0.000000 -0.000000
+                      anchor -0.017050 0.000000 0.040000
+                    }
+                    device [
+                      RotationalMotor {
+                        name "youtui3"
+                        maxTorque 10000
+                      }
+                      PositionSensor {
+                        name "youtui3_sensor"
+                      }
+                    ]
+                    endPoint Solid {
+                      translation -0.017050 0.000000 0.040000
+                      rotation 0.707107 0.000000 -0.707107 3.141593
+                      children [
+                        Shape {
+                          appearance DEF youtui3_material PBRAppearance {
+                            baseColor 0.752941 0.752941 0.752941
+                            roughness 1.000000
+                            metalness 0
+                          }
+                          geometry DEF youtui3 Mesh {
+                            url "D:\Program\LivelybotCode/livelybot_urdf/meshes/youtui3.STL"
+                          }
+                        }
+                        HingeJoint {
+                          jointParameters HingeJointParameters {
+                            axis -0.000000 0.000000 -1.000000
+                            anchor -0.011329 -0.149154 -0.029200
+                          }
+                          device [
+                            RotationalMotor {
+                              name "youtui4"
+                              maxTorque 10000
+                            }
+                            PositionSensor {
+                              name "youtui4_sensor"
+                            }
+                          ]
+                          endPoint Solid {
+                            translation -0.011329 -0.149154 -0.029200
+                            rotation 0.000000 0.000000 1.000000 3.141593
+                            children [
+                              Shape {
+                                appearance DEF youtui4_material PBRAppearance {
+                                  baseColor 0.752941 0.752941 0.752941
+                                  roughness 1.000000
+                                  metalness 0
+                                }
+                                geometry DEF youtui4 Mesh {
+                                  url "D:\Program\LivelybotCode/livelybot_urdf/meshes/youtui4.STL"
+                                }
+                              }
+                              HingeJoint {
+                                jointParameters HingeJointParameters {
+                                  axis 0.000000 -0.000000 -1.000000
+                                  anchor 0.000000 0.160000 -0.004069
+                                }
+                                device [
+                                  RotationalMotor {
+                                    name "youtui5"
+                                    maxTorque 10000
+                                  }
+                                  PositionSensor {
+                                    name "youtui5_sensor"
+                                  }
+                                ]
+                                endPoint Solid {
+                                  translation 0.000000 0.160000 -0.004069
+                                  rotation 1.000000 0.000000 0.000000 3.141593
+                                  children [
+                                    Shape {
+                                      appearance DEF youtui5_material PBRAppearance {
+                                        baseColor 0.898039 0.917647 0.929412
+                                        roughness 1.000000
+                                        metalness 0
+                                      }
+                                      geometry DEF youtui5 Mesh {
+                                        url "D:\Program\LivelybotCode/livelybot_urdf/meshes/youtui5.STL"
+                                      }
+                                    }
+                                    HingeJoint {
+                                      jointParameters HingeJointParameters {
+                                        axis 1.000000 0.000000 -0.000000
+                                        anchor 0.011956 0.000000 -0.015400
+                                      }
+                                      device [
+                                        RotationalMotor {
+                                          name "youtui6"
+                                          maxTorque 10000
+                                        }
+                                        PositionSensor {
+                                          name "youtui6_sensor"
+                                        }
+                                      ]
+                                      endPoint Solid {
+                                        translation 0.011956 0.000000 -0.015400
+                                        rotation 0.707107 0.000000 -0.707107 3.141593
+                                        children [
+                                          Shape {
+                                            appearance DEF youtui6_material PBRAppearance {
+                                              baseColor 0.752941 0.752941 0.752941
+                                              roughness 1.000000
+                                              metalness 0
+                                            }
+                                            geometry DEF youtui6 Mesh {
+                                              url "D:\Program\LivelybotCode/livelybot_urdf/meshes/youtui6.STL"
+                                            }
+                                          }
+                                        ]
+                                        name "youtui6"
+                                        boundingObject USE youtui6
+                                        physics Physics {
+                                          density -1
+                                          mass 0.180326
+                                          centerOfMass [ -0.000001 0.018717 -0.012448 ]
+                                          inertiaMatrix [
+                                            2.102479e-04 2.709813e-04 6.746996e-05
+                                            1.888819e-10 -2.117850e-09 -2.416974e-06
+                                          ]
+                                        }
+                                      }
+                                    }
+                                  ]
+                                  name "youtui5"
+                                  boundingObject USE youtui5
+                                  physics Physics {
+                                    density -1
+                                    mass 0.008865
+                                    centerOfMass [ 0.000000 -0.000000 -0.015400 ]
+                                    inertiaMatrix [
+                                      2.262701e-07 9.726252e-07 1.003647e-06
+                                      8.868769e-13 -8.251548e-14 -1.336150e-12
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                            name "youtui4"
+                            boundingObject USE youtui4
+                            physics Physics {
+                              density -1
+                              mass 0.274677
+                              centerOfMass [ 0.007496 0.073988 0.011433 ]
+                              inertiaMatrix [
+                                9.781262e-05 5.545039e-05 1.033472e-04
+                                3.539933e-08 -1.168039e-13 4.918388e-12
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                      name "youtui3"
+                      boundingObject USE youtui3
+                      physics Physics {
+                        density -1
+                        mass 0.112706
+                        centerOfMass [ -0.004263 -0.056371 -0.014257 ]
+                        inertiaMatrix [
+                          2.683979e-04 1.741444e-05 2.850875e-04
+                          -2.027383e-05 1.360546e-09 1.695223e-08
+                        ]
+                      }
+                    }
+                  }
+                ]
+                name "youtui2"
+                boundingObject USE youtui2
+                physics Physics {
+                  density -1
+                  mass 0.250907
+                  centerOfMass [ -0.000559 -0.001022 0.032952 ]
+                  inertiaMatrix [
+                    7.754295e-05 5.963977e-05 5.795835e-05
+                    -4.344291e-07 8.224874e-07 2.149818e-06
+                  ]
+                }
+              }
+            }
+          ]
+          name "youtui1"
+          boundingObject USE youtui1
+          physics Physics {
+            density -1
+            mass 0.119463
+            centerOfMass [ -0.000000 0.043421 0.036475 ]
+            inertiaMatrix [
+              3.324878e-05 3.343217e-05 2.773421e-05
+              3.777898e-11 4.103207e-12 -2.596901e-06
+            ]
+          }
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis 0.000000 -0.000000 1.000000
+          anchor -0.075000 -0.008363 -0.237429
+        }
+        device [
+          RotationalMotor {
+            name "zuotui1"
+            maxTorque 10000
+          }
+          PositionSensor {
+            name "zuotui1_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation -0.075000 -0.008363 -0.237429
+          rotation 0.000000 -1.000000 -0.000000 3.141593
+          children [
+            Shape {
+              appearance DEF zuotui1_material PBRAppearance {
+                baseColor 0.752941 0.752941 0.752941
+                roughness 1.000000
+                metalness 0
+              }
+              geometry DEF zuotui1 Mesh {
+                url "D:\Program\LivelybotCode/livelybot_urdf/meshes/zuotui1.STL"
+              }
+            }
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                axis 0.000000 -1.000000 0.000000
+                anchor 0.000000 -0.038757 0.052571
+              }
+              device [
+                RotationalMotor {
+                  name "zuotui2"
+                  maxTorque 10000
+                }
+                PositionSensor {
+                  name "zuotui2_sensor"
+                }
+              ]
+              endPoint Solid {
+                translation 0.000000 -0.038757 0.052571
+                rotation -1.000000 0.000000 0.000000 1.570796
+                children [
+                  Shape {
+                    appearance DEF zuotui2_material PBRAppearance {
+                      baseColor 0.752941 0.752941 0.752941
+                      roughness 1.000000
+                      metalness 0
+                    }
+                    geometry DEF zuotui2 Mesh {
+                      url "D:\Program\LivelybotCode/livelybot_urdf/meshes/zuotui2.STL"
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 1.000000 0.000000 -0.000000
+                      anchor -0.017050 0.000000 0.040000
+                    }
+                    device [
+                      RotationalMotor {
+                        name "zuotui3"
+                        maxTorque 10000
+                      }
+                      PositionSensor {
+                        name "zuotui3_sensor"
+                      }
+                    ]
+                    endPoint Solid {
+                      translation -0.017050 0.000000 0.040000
+                      rotation 0.707107 0.000000 -0.707107 3.141593
+                      children [
+                        Shape {
+                          appearance DEF zuotui3_material PBRAppearance {
+                            baseColor 0.752941 0.752941 0.752941
+                            roughness 1.000000
+                            metalness 0
+                          }
+                          geometry DEF zuotui3 Mesh {
+                            url "D:\Program\LivelybotCode/livelybot_urdf/meshes/zuotui3.STL"
+                          }
+                        }
+                        HingeJoint {
+                          jointParameters HingeJointParameters {
+                            axis -0.000000 0.000000 -1.000000
+                            anchor -0.012000 0.149519 -0.029200
+                          }
+                          device [
+                            RotationalMotor {
+                              name "zuotui4"
+                              maxTorque 10000
+                            }
+                            PositionSensor {
+                              name "zuotui4_sensor"
+                            }
+                          ]
+                          endPoint Solid {
+                            translation -0.012000 0.149519 -0.029200
+                            rotation 0.000000 0.000000 1.000000 3.141593
+                            children [
+                              Shape {
+                                appearance DEF zuotui4_material PBRAppearance {
+                                  baseColor 0.752941 0.752941 0.752941
+                                  roughness 1.000000
+                                  metalness 0
+                                }
+                                geometry DEF zuotui4 Mesh {
+                                  url "D:\Program\LivelybotCode/livelybot_urdf/meshes/zuotui4.STL"
+                                }
+                              }
+                              HingeJoint {
+                                jointParameters HingeJointParameters {
+                                  axis 0.000000 -0.000000 -1.000000
+                                  anchor 0.000000 -0.160000 -0.003350
+                                }
+                                device [
+                                  RotationalMotor {
+                                    name "zuotui5"
+                                    maxTorque 10000
+                                  }
+                                  PositionSensor {
+                                    name "zuotui5_sensor"
+                                  }
+                                ]
+                                endPoint Solid {
+                                  translation 0.000000 -0.160000 -0.003350
+                                  rotation 1.000000 0.000000 0.000000 3.141593
+                                  children [
+                                    Shape {
+                                      appearance DEF zuotui5_material PBRAppearance {
+                                        baseColor 0.898039 0.917647 0.929412
+                                        roughness 1.000000
+                                        metalness 0
+                                      }
+                                      geometry DEF zuotui5 Mesh {
+                                        url "D:\Program\LivelybotCode/livelybot_urdf/meshes/zuotui5.STL"
+                                      }
+                                    }
+                                    HingeJoint {
+                                      jointParameters HingeJointParameters {
+                                        axis 1.000000 0.000000 -0.000000
+                                        anchor 0.011956 0.000000 -0.015500
+                                      }
+                                      device [
+                                        RotationalMotor {
+                                          name "zuotui6"
+                                          maxTorque 10000
+                                        }
+                                        PositionSensor {
+                                          name "zuotui6_sensor"
+                                        }
+                                      ]
+                                      endPoint Solid {
+                                        translation 0.011956 0.000000 -0.015500
+                                        rotation 0.707107 0.000000 -0.707107 3.141593
+                                        children [
+                                          Shape {
+                                            appearance DEF zuotui6_material PBRAppearance {
+                                              baseColor 0.752941 0.752941 0.752941
+                                              roughness 1.000000
+                                              metalness 0
+                                            }
+                                            geometry DEF zuotui6 Mesh {
+                                              url "D:\Program\LivelybotCode/livelybot_urdf/meshes/zuotui6.STL"
+                                            }
+                                          }
+                                        ]
+                                        name "zuotui6"
+                                        boundingObject USE zuotui6
+                                        physics Physics {
+                                          density -1
+                                          mass 0.174974
+                                          centerOfMass [ 0.000000 -0.018569 -0.011756 ]
+                                          inertiaMatrix [
+                                            2.099672e-04 2.705538e-04 6.730990e-05
+                                            7.204113e-11 2.108324e-09 2.417005e-06
+                                          ]
+                                        }
+                                      }
+                                    }
+                                  ]
+                                  name "zuotui5"
+                                  boundingObject USE zuotui5
+                                  physics Physics {
+                                    density -1
+                                    mass 0.008865
+                                    centerOfMass [ 0.000000 0.000000 -0.015500 ]
+                                    inertiaMatrix [
+                                      2.262701e-07 9.726252e-07 1.003647e-06
+                                      -8.868769e-13 8.251548e-14 -1.336150e-12
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                            name "zuotui4"
+                            boundingObject USE zuotui4
+                            physics Physics {
+                              density -1
+                              mass 0.274677
+                              centerOfMass [ 0.007496 -0.073988 0.012147 ]
+                              inertiaMatrix [
+                                9.781262e-05 5.545039e-05 1.033472e-04
+                                -3.539933e-08 1.168039e-13 4.918388e-12
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                      name "zuotui3"
+                      boundingObject USE zuotui3
+                      physics Physics {
+                        density -1
+                        mass 0.109881
+                        centerOfMass [ -0.004546 0.056645 -0.014664 ]
+                        inertiaMatrix [
+                          2.682977e-04 1.731427e-05 2.850755e-04
+                          2.027383e-05 1.360533e-09 -1.695223e-08
+                        ]
+                      }
+                    }
+                  }
+                ]
+                name "zuotui2"
+                boundingObject USE zuotui2
+                physics Physics {
+                  density -1
+                  mass 0.250907
+                  centerOfMass [ 0.002430 0.001185 0.032406 ]
+                  inertiaMatrix [
+                    7.754295e-05 5.926074e-05 5.833738e-05
+                    8.083076e-07 -4.510511e-07 -1.572382e-06
+                  ]
+                }
+              }
+            }
+          ]
+          name "zuotui1"
+          boundingObject USE zuotui1
+          physics Physics {
+            density -1
+            mass 0.119463
+            centerOfMass [ 0.000000 -0.043421 0.036475 ]
+            inertiaMatrix [
+              3.324878e-05 3.343217e-05 2.773421e-05
+              3.777898e-11 -4.103207e-12 2.596901e-06
+            ]
+          }
+        }
+      }
+    ]
+    name IS name
+    boundingObject USE body
+    physics Physics {
+      density -1
+      mass 1.651843
+      centerOfMass [ -0.000744 0.003086 -0.112034 ]
+      inertiaMatrix [
+        1.650250e-03 2.347372e-03 1.781239e-03
+        7.853311e-08 -5.003261e-06 -8.776497e-05
+      ]
+    }
+  }
+}
