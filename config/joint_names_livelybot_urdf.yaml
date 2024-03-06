@@ -1,1 +1,1 @@
-controller_joint_names: ['', 'L_hip_joint', 'L_hip2_joint', 'L_thigh_joint', 'L_calf_joint', 'L_toe_joint', 'R_hip_joint', 'R_hip2_joint', 'R_thigh_joint', 'R_calf_joint', 'R_toe_joint', ]
+controller_joint_names: ['', 'youshou1', 'youshou2', 'youshou3', 'youshou4', 'zuoshou1', 'zuoshou2', 'zuoshou3', 'zuoshou4', 'youtui1', 'youtui2', 'youtui3', 'youtui4', 'youtui5', 'youtui6', 'zuotui1', 'zuotui2', 'zuotui3', 'zuotui4', 'zuotui5', 'zuotui6', ]

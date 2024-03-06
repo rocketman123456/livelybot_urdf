@@ -1,348 +1,1207 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com)
-Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
-For more information, please see http://wiki.ros.org/sw_urdf_exporter
--->
-<robot name="livelybot_urdf">
-	    <link name="base_link">
-		<inertial>
-			<origin xyz="0.042418 -5.836E-05 0.017336" rpy="0 0 0" />
-			<mass value="0.63088" />
-			<inertia ixx="0.0019802" ixy="3.6377E-08" ixz="3.091E-05" iyy="0.0011784" iyz="2.0119E-08" izz="0.0024461" />
-		</inertial>
-		<visual>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-				<mesh filename="package://livelybot_urdf/meshes/base_link.STL" />
-			</geometry>
-			<material name="">
-				<color rgba="1 1 1 1" />
-			</material>
-		</visual>
-		<collision>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-				<mesh filename="package://livelybot_urdf/meshes/base_link.STL" />
-			</geometry>
-		</collision>
-	</link>
-	<link name="imu_link">
-		<inertial>
-			<origin xyz="0.0137089490024808 -2.94548196346016E-05 -0.0923185931780866" rpy="0 0 0" />
-			<mass value="0.0" />
-			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-		</inertial>
-		<visual>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-        <box size="0.001 0.001 0.001" />
-			</geometry>
-			<material name="">
-				<color rgba="1 1 1 1" />
-			</material>
-		</visual>
-		<collision>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-        <box size="0.001 0.001 0.001" />
-			</geometry>
-		</collision>
-	</link>
-	<joint name="base_imu_joint" type="fixed">
-		<origin xyz="0 0 0.00572" rpy="0 0 0" />
-		<parent link="base_link" />
-		<child link="imu_link" />
-		<axis xyz="0 0 0" />
-	</joint>
-	<link name="L_hip">
-		<inertial>
-			<origin xyz="0.0560469785532357 -6.40933923989895E-09 0.0465742815241479" rpy="0 0 0" />
-			<mass value="0.116884292970712" />
-			<inertia ixx="3.7540266331977E-05" ixy="-9.42771492040107E-12" ixz="-4.36077137816932E-06" iyy="4.69555171175074E-05" iyz="-2.72493557400722E-12" izz="4.32454239525254E-05" />
-		</inertial>
-		<visual>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-				<mesh filename="package://livelybot_urdf/meshes/L_hip.STL" />
-			</geometry>
-			<material name="">
-				<color rgba="1 1 1 1" />
-			</material>
-		</visual>
-		<collision>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-				<mesh filename="package://livelybot_urdf/meshes/L_hip.STL" />
-			</geometry>
-		</collision>
-	</link>
-	<joint name="L_hip_joint" type="revolute">
-		<origin xyz="0 0.075 0" rpy="3.1416 0 3.1416" />
-		<parent link="base_link" />
-		<child link="L_hip" />
-		<axis xyz="0 0 1" />
-		<limit lower="-0.55" upper="0.55" effort="20.0" velocity="20.0" />
-	</joint>
-	<link name="L_hip2">
-		<inertial>
-			<origin xyz="0.0309072230654156 -0.000858756081910141 0.0332451481987078" rpy="0 0 0" />
-			<mass value="0.125448617656537" />
-			<inertia ixx="5.53521193479647E-05" ixy="-3.56340330502834E-06" ixz="-1.93226894229574E-05" iyy="7.99417228381797E-05" iyz="-1.84997816876284E-06" izz="6.64062940642034E-05" />
-		</inertial>
-		<visual>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-				<mesh filename="package://livelybot_urdf/meshes/L_hip2.STL" />
-			</geometry>
-			<material name="">
-				<color rgba="1 1 1 1" />
-			</material>
-		</visual>
-		<collision>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-				<mesh filename="package://livelybot_urdf/meshes/L_hip2.STL" />
-			</geometry>
-		</collision>
-	</link>
-	<joint name="L_hip2_joint" type="revolute">
-		<origin xyz="0.037 0 0.054" rpy="-1.5708 0 1.5708" />
-		<parent link="L_hip" />
-		<child link="L_hip2" />
-		<axis xyz="0 0 1" />
-		<limit lower="-0.18" upper="0.48" effort="20.0" velocity="20.0" />
-	</joint>
-	<link name="L_thigh">
-		<inertial>
-			<origin xyz="0.0223260729573922 3.03576608295941E-18 0.0400536863070936" rpy="0 0 0" />
-			<mass value="0.137807983904981" />
-			<inertia ixx="4.68049989970575E-05" ixy="-4.55991575251683E-20" ixz="3.01249192067359E-05" iyy="0.000231171478895831" iyz="8.22464509411909E-21" izz="0.000224309841397752" />
-		</inertial>
-		<visual>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-				<mesh filename="package://livelybot_urdf/meshes/L_thigh.STL" />
-			</geometry>
-			<material name="">
-				<color rgba="1 1 1 1" />
-			</material>
-		</visual>
-		<collision>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-				<mesh filename="package://livelybot_urdf/meshes/L_thigh.STL" />
-			</geometry>
-		</collision>
-	</link>
-	<joint name="L_thigh_joint" type="revolute">
-		<origin xyz="0.0161 0 0.039" rpy="1.5708 -0.25 -1.5708" />
-		<parent link="L_hip2" />
-		<child link="L_thigh" />
-		<axis xyz="0 0 1" />
-		<limit lower="-0.44" upper="1.0" effort="20.0" velocity="20.0" />
-	</joint>
-	<link name="L_calf">
-		<inertial>
-			<origin xyz="0.0637217850662202 0.0045962102584563 0.0125678073048835" rpy="0 0 0" />
-			<mass value="0.106343448636289" />
-			<inertia ixx="2.00356805610283E-05" ixy="3.32248264945443E-07" ixz="-1.28437033439576E-07" iyy="0.000119450065875996" iyz="-6.40774201031294E-08" izz="0.000122526027150439" />
-		</inertial>
-		<visual>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-				<mesh filename="package://livelybot_urdf/meshes/L_calf.STL" />
-			</geometry>
-			<material name="">
-				<color rgba="1 1 1 1" />
-			</material>
-		</visual>
-		<collision>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-				<mesh filename="package://livelybot_urdf/meshes/L_calf.STL" />
-			</geometry>
-		</collision>
-	</link>
-	<joint name="L_calf_joint" type="revolute">
-		<origin xyz="0.15 0 0.0161" rpy="-3.1416 0 -0.5" />
-		<parent link="L_thigh" />
-		<child link="L_calf" />
-		<axis xyz="0 0 1" />
-		<limit lower="0.0" upper="1.7" effort="20.0" velocity="20.0" />
-	</joint>
-	<link name="L_toe">
-		<inertial>
-			<origin xyz="0.000834584120334044 -0.0112941816613386 6.46892758804363E-09" rpy="0 0 0" />
-			<mass value="0.0187301054238791" />
-			<inertia ixx="1.17270430762399E-06" ixy="6.03537221578576E-07" ixz="1.89483242400211E-14" iyy="1.08896121231129E-05" iyz="3.6633857520274E-22" izz="1.12731889139232E-05" />
-		</inertial>
-		<visual>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-				<mesh filename="package://livelybot_urdf/meshes/L_toe.STL" />
-			</geometry>
-			<material name="">
-				<color rgba="1 1 1 1" />
-			</material>
-		</visual>
-		<collision>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-				<mesh filename="package://livelybot_urdf/meshes/L_toe.STL" />
-			</geometry>
-		</collision>
-	</link>
-	<joint name="L_toe_joint" type="revolute">
-		<origin xyz="0.16 0 0" rpy="-3.1416 0 -1.8208" />
-		<parent link="L_calf" />
-		<child link="L_toe" />
-		<axis xyz="0 0 1" />
-		<limit lower="-0.85" upper="1.0" effort="20.0" velocity="20.0" />
-	</joint>
-	<link name="R_hip">
-		<inertial>
-			<origin xyz="0.0560469785532357 -6.40933922602116E-09 0.0465742815241478" rpy="0 0 0" />
-			<mass value="0.116884292970712" />
-			<inertia ixx="3.7540266331977E-05" ixy="-9.42771492313437E-12" ixz="-4.36077137816932E-06" iyy="4.69555171175074E-05" iyz="-2.72493557242105E-12" izz="4.32454239525254E-05" />
-		</inertial>
-		<visual>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-				<mesh filename="package://livelybot_urdf/meshes/R_hip.STL" />
-			</geometry>
-			<material name="">
-				<color rgba="1 1 1 1" />
-			</material>
-		</visual>
-		<collision>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-				<mesh filename="package://livelybot_urdf/meshes/R_hip.STL" />
-			</geometry>
-		</collision>
-	</link>
-	<joint name="R_hip_joint" type="revolute">
-		<origin xyz="0 -0.075 0" rpy="3.1416 0 3.1416" />
-		<parent link="base_link" />
-		<child link="R_hip" />
-		<axis xyz="0 0 1" />
-		<limit lower="-0.55" upper="0.55" effort="20.0" velocity="20.0" />
-	</joint>
-	<link name="R_hip2">
-		<inertial>
-			<origin xyz="0.0309072116551233 0.000858757175953094 0.0332451451614201" rpy="0 0 0" />
-			<mass value="0.125448645563517" />
-			<inertia ixx="5.53521261009191E-05" ixy="3.56340110481497E-06" ixz="-1.93227169282725E-05" iyy="7.99417985454008E-05" iyz="1.8499802142557E-06" izz="6.64063646851793E-05" />
-		</inertial>
-		<visual>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-				<mesh filename="package://livelybot_urdf/meshes/R_hip2.STL" />
-			</geometry>
-			<material name="">
-				<color rgba="1 1 1 1" />
-			</material>
-		</visual>
-		<collision>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-				<mesh filename="package://livelybot_urdf/meshes/R_hip2.STL" />
-			</geometry>
-		</collision>
-	</link>
-	<joint name="R_hip2_joint" type="revolute">
-		<origin xyz="0.037 0 0.054" rpy="1.5708 0 -1.5708" />
-		<parent link="R_hip" />
-		<child link="R_hip2" />
-		<axis xyz="0 0 1" />
-		<limit lower="-0.48" upper="0.18" effort="20.0" velocity="20.0" />
-	</joint>
-	<link name="R_thigh">
-		<inertial>
-			<origin xyz="0.0223260729573922 4.33680868994202E-19 0.0400536863070936" rpy="0 0 0" />
-			<mass value="0.137807983904981" />
-			<inertia ixx="4.68049989970575E-05" ixy="1.39680883168296E-21" ixz="3.01249192067358E-05" iyy="0.00023117147889583" iyz="1.89032544259718E-21" izz="0.000224309841397752" />
-		</inertial>
-		<visual>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-				<mesh filename="package://livelybot_urdf/meshes/R_thigh.STL" />
-			</geometry>
-			<material name="">
-				<color rgba="1 1 1 1" />
-			</material>
-		</visual>
-		<collision>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-				<mesh filename="package://livelybot_urdf/meshes/R_thigh.STL" />
-			</geometry>
-		</collision>
-	</link>
-	<joint name="R_thigh_joint" type="revolute">
-		<origin xyz="0.0161 0 0.039" rpy="-1.5708 -0.25 1.5708" />
-		<parent link="R_hip2" />
-		<child link="R_thigh" />
-		<axis xyz="0 0 1" />
-		<limit lower="-1.0" upper="0.44" effort="20.0" velocity="20.0" />
-	</joint>
-	<link name="R_calf">
-		<inertial>
-			<origin xyz="0.0637217850662202 -0.00459621025845629 0.0125678073048835" rpy="0 0 0" />
-			<mass value="0.106343448636289" />
-			<inertia ixx="2.00356805610283E-05" ixy="-3.32248264945435E-07" ixz="-1.28437033439581E-07" iyy="0.000119450065875996" iyz="6.40774201031356E-08" izz="0.000122526027150439" />
-		</inertial>
-		<visual>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-				<mesh filename="package://livelybot_urdf/meshes/R_calf.STL" />
-			</geometry>
-			<material name="">
-				<color rgba="1 1 1 1" />
-			</material>
-		</visual>
-		<collision>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-				<mesh filename="package://livelybot_urdf/meshes/R_calf.STL" />
-			</geometry>
-		</collision>
-	</link>
-	<joint name="R_calf_joint" type="revolute">
-		<origin xyz="0.15 0 0.0161" rpy="3.1416 0 0.5" />
-		<parent link="R_thigh" />
-		<child link="R_calf" />
-		<axis xyz="0 0 1" />
-		<limit lower="-1.7" upper="0" effort="20.0" velocity="20.0" />
-	</joint>
-	<link name="R_toe">
-		<inertial>
-			<origin xyz="0.000834580136385862 0.0112941643085711 1.02338218316289E-08" rpy="0 0 0" />
-			<mass value="0.0187301054238791" />
-			<inertia ixx="1.17270430762399E-06" ixy="-6.03537221578577E-07" ixz="-1.89483250885368E-14" iyy="1.08896121231129E-05" iyz="3.50870101460927E-22" izz="1.12731889139232E-05" />
-		</inertial>
-		<visual>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-				<mesh filename="package://livelybot_urdf/meshes/R_toe.STL" />
-			</geometry>
-			<material name="">
-				<color rgba="1 1 1 1" />
-			</material>
-		</visual>
-		<collision>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-				<mesh filename="package://livelybot_urdf/meshes/R_toe.STL" />
-			</geometry>
-		</collision>
-	</link>
-	<joint name="R_toe_joint" type="revolute">
-		<origin xyz="0.16 0 0" rpy="3.1416 0 1.8208" />
-		<parent link="R_calf" />
-		<child link="R_toe" />
-		<axis xyz="0 0 1" />
-		<limit lower="-1.0" upper="0.85" effort="20.0" velocity="20.0" />
-	</joint>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="livelybot_urdf">
+  <link
+    name="body">
+    <inertial>
+      <origin
+        xyz="-0.000743851192087672 0.00308593009730196 -0.112033827350936"
+        rpy="0 0 0" />
+      <mass
+        value="1.65184295519328" />
+      <inertia
+        ixx="0.00165025015541042"
+        ixy="7.8533108741001E-08"
+        ixz="-5.00326065663299E-06"
+        iyy="0.00234737214247695"
+        iyz="-8.77649730239711E-05"
+        izz="0.00178123943345061" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/body.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/body.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="youshou1">
+    <inertial>
+      <origin
+        xyz="0.00698173480243613 -1.04083408558608E-17 0.0245887125193222"
+        rpy="0 0 0" />
+      <mass
+        value="0.0981089714370753" />
+      <inertia
+        ixx="3.05332952194397E-05"
+        ixy="1.37666070574255E-20"
+        ixz="-4.30576041893582E-06"
+        iyy="2.96726777621094E-05"
+        iyz="1.22881421587325E-20"
+        izz="2.48125139334478E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/youshou1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/youshou1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="youshou1"
+    type="revolute">
+    <origin
+      xyz="0.0855789473684193 -0.0138454412666174 -0.0364999999999999"
+      rpy="1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="body" />
+    <child
+      link="youshou1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="youshou2">
+    <inertial>
+      <origin
+        xyz="-2.77555756156289E-17 -0.0402003460346642 -0.0135692368364354"
+        rpy="0 0 0" />
+      <mass
+        value="0.140066448116616" />
+      <inertia
+        ixx="3.99721600176041E-05"
+        ixy="1.4410700925217E-20"
+        ixz="-1.84131282807983E-21"
+        iyy="2.78443473579448E-05"
+        iyz="3.38209840689463E-06"
+        izz="3.96947309338918E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/youshou2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/youshou2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="youshou2"
+    type="revolute">
+    <origin
+      xyz="0.0315278736990495 0.001927065256896 0.0319210526315811"
+      rpy="0 1.5707963267949 0" />
+    <parent
+      link="youshou1" />
+    <child
+      link="youshou2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="youshou3">
+    <inertial>
+      <origin
+        xyz="-0.00289891982058343 -4.34413949257362E-10 0.0739914251363382"
+        rpy="0 0 0" />
+      <mass
+        value="0.124842254477786" />
+      <inertia
+        ixx="2.60465435672315E-05"
+        ixy="-6.28240085433269E-13"
+        ixz="1.29298233574124E-07"
+        iyy="2.32845011402489E-05"
+        iyz="-1.20882346126205E-13"
+        izz="2.19327066723541E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/youshou3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/youshou3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="youshou3"
+    type="revolute">
+    <origin
+      xyz="0 -0.0709270652568963 -0.0291824324324326"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="youshou2" />
+    <child
+      link="youshou3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="youshou4">
+    <inertial>
+      <origin
+        xyz="0.0424053707201579 1.44009754121655E-09 -0.00945349599835138"
+        rpy="0 0 0" />
+      <mass
+        value="0.0490685665290975" />
+      <inertia
+        ixx="7.27713337676602E-06"
+        ixy="-8.61265513325887E-13"
+        ixz="4.18040829587742E-06"
+        iyy="2.91346223915335E-05"
+        iyz="1.72172770640859E-13"
+        izz="2.65248278452664E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/youshou4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/youshou4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="youshou4"
+    type="revolute">
+    <origin
+      xyz="-0.024078947368421 -0.0023454412666174 0.0959999999999999"
+      rpy="-1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="youshou3" />
+    <child
+      link="youshou4" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="zuoshou1">
+    <inertial>
+      <origin
+        xyz="0.00620899588359392 1.04083408558608E-17 0.0252164419151853"
+        rpy="0 0 0" />
+      <mass
+        value="0.0936721850648488" />
+      <inertia
+        ixx="2.29551064764471E-05"
+        ixy="-1.9274468261845E-20"
+        ixz="-1.29299387260144E-07"
+        iyy="2.01930642611176E-05"
+        iyz="1.76364291610747E-22"
+        izz="1.97167672736893E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/zuoshou1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/zuoshou1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="zuoshou1"
+    type="revolute">
+    <origin
+      xyz="-0.0855789473684207 -0.0138454412666155 -0.0364999999999966"
+      rpy="-1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="body" />
+    <child
+      link="zuoshou1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="zuoshou2">
+    <inertial>
+      <origin
+        xyz="4.16333634234434E-17 0.0402003460346643 -0.0135692368364364"
+        rpy="0 0 0" />
+      <mass
+        value="0.140066448116616" />
+      <inertia
+        ixx="3.99721600176041E-05"
+        ixy="3.59210462051846E-20"
+        ixz="-6.81369195111486E-21"
+        iyy="2.78443473579448E-05"
+        iyz="-3.38209840689459E-06"
+        izz="3.96947309338917E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/zuoshou2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/zuoshou2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="zuoshou2"
+    type="revolute">
+    <origin
+      xyz="0.0315278736990499 -0.00192706525689325 0.031921052631579"
+      rpy="0 1.5707963267949 0" />
+    <parent
+      link="zuoshou1" />
+    <child
+      link="zuoshou2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="zuoshou3">
+    <inertial>
+      <origin
+        xyz="-0.00289891994976793 -2.3388069259056E-11 0.0739914227001209"
+        rpy="0 0 0" />
+      <mass
+        value="0.124842254477786" />
+      <inertia
+        ixx="2.60465429084055E-05"
+        ixy="3.16348598383564E-13"
+        ixz="1.29300402671481E-07"
+        iyy="2.32845017990749E-05"
+        iyz="5.60842164823607E-13"
+        izz="2.19327066723541E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/zuoshou3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/zuoshou3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="zuoshou3"
+    type="revolute">
+    <origin
+      xyz="0 0.0709270652568965 -0.0291824324324343"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="zuoshou2" />
+    <child
+      link="zuoshou3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="zuoshou4">
+    <inertial>
+      <origin
+        xyz="0.041461237755847 1.68791874921581E-09 -0.00952684018911971"
+        rpy="0 0 0" />
+      <mass
+        value="0.0490685665290976" />
+      <inertia
+        ixx="7.27713337676597E-06"
+        ixy="-1.59290867346696E-12"
+        ixz="4.18040913092643E-06"
+        iyy="2.91346231702517E-05"
+        iyz="8.39655238726738E-13"
+        izz="2.65248270665483E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/zuoshou4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/zuoshou4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="zuoshou4"
+    type="revolute">
+    <origin
+      xyz="-0.0241522904948619 0.00140130830231822 0.0959999999999999"
+      rpy="1.5707963267949 0 -1.5707963267949" />
+    <parent
+      link="zuoshou3" />
+    <child
+      link="zuoshou4" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="youtui1">
+    <inertial>
+      <origin
+        xyz="-2.03256717984379E-08 0.04342056242832 0.0364750815139542"
+        rpy="0 0 0" />
+      <mass
+        value="0.119463468383066" />
+      <inertia
+        ixx="3.3248779446718E-05"
+        ixy="3.77789839203321E-11"
+        ixz="4.10320682215805E-12"
+        iyy="3.34321679277659E-05"
+        iyz="-2.59690075020189E-06"
+        izz="2.77342122624498E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/youtui1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/youtui1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="youtui1"
+    type="revolute">
+    <origin
+      xyz="0.0750000405019333 -0.00836285444900997 -0.237429264502804"
+      rpy="-3.14159265358979 0 0" />
+    <parent
+      link="body" />
+    <child
+      link="youtui1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="youtui2">
+    <inertial>
+      <origin
+        xyz="-0.000559151274748065 -0.00102210149662718 0.0329524400455002"
+        rpy="0 0 0" />
+      <mass
+        value="0.250906808760741" />
+      <inertia
+        ixx="7.75429487742892E-05"
+        ixy="-4.34429137271802E-07"
+        ixz="8.22487387644726E-07"
+        iyy="5.9639771399982E-05"
+        iyz="2.14981798814183E-06"
+        izz="5.79583494067185E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/youtui2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/youtui2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="youtui2"
+    type="revolute">
+    <origin
+      xyz="0 0.0387571455509902 0.0525707354971963"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="youtui1" />
+    <child
+      link="youtui2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="youtui3">
+    <inertial>
+      <origin
+        xyz="-0.0042632181599852 -0.056371174563821 -0.0142569202885918"
+        rpy="0 0 0" />
+      <mass
+        value="0.112705995385217" />
+      <inertia
+        ixx="0.00026839791059471"
+        ixy="-2.02738278799682E-05"
+        ixz="1.36054625371551E-09"
+        iyy="1.74144359843192E-05"
+        iyz="1.6952232939528E-08"
+        izz="0.000285087491321532" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/youtui3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/youtui3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="youtui3"
+    type="revolute">
+    <origin
+      xyz="-0.01705 0 0.04"
+      rpy="3.14159265358979 1.5707963267949 0" />
+    <parent
+      link="youtui2" />
+    <child
+      link="youtui3" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="youtui4">
+    <inertial>
+      <origin
+        xyz="0.00749552547359311 0.0739879414883973 0.0114332942979092"
+        rpy="0 0 0" />
+      <mass
+        value="0.274677354729083" />
+      <inertia
+        ixx="9.78126199846545E-05"
+        ixy="3.5399329848466E-08"
+        ixz="-1.168038597756E-13"
+        iyy="5.54503910551168E-05"
+        iyz="4.91838826018048E-12"
+        izz="0.000103347216728136" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/youtui4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/youtui4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="youtui4"
+    type="revolute">
+    <origin
+      xyz="-0.0113285898146951 -0.149153520094698 -0.0292"
+      rpy="0 0 3.14159265358979" />
+    <parent
+      link="youtui3" />
+    <child
+      link="youtui4" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="youtui5">
+    <inertial>
+      <origin
+        xyz="1.65091982085031E-07 -1.04242595666548E-08 -0.0153996454571448"
+        rpy="0 0 0" />
+      <mass
+        value="0.00886465357060093" />
+      <inertia
+        ixx="2.26270093875982E-07"
+        ixy="8.86876891834254E-13"
+        ixz="-8.25154849660044E-14"
+        iyy="9.72625201373394E-07"
+        iyz="-1.33615017471603E-12"
+        izz="1.0036467107132E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/youtui5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/youtui5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="youtui5"
+    type="revolute">
+    <origin
+      xyz="0 0.16 -0.00406906067441093"
+      rpy="3.14159265358979 0 0" />
+    <parent
+      link="youtui4" />
+    <child
+      link="youtui5" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="youtui6">
+    <inertial>
+      <origin
+        xyz="-1.21473781113102E-06 0.018716791240959 -0.0124481314126819"
+        rpy="0 0 0" />
+      <mass
+        value="0.180326384410632" />
+      <inertia
+        ixx="0.000210247897491588"
+        ixy="1.8888189982844E-10"
+        ixz="-2.11784956351859E-09"
+        iyy="0.000270981299887219"
+        iyz="-2.41697399242135E-06"
+        izz="6.74699604004904E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/youtui6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/youtui6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="youtui6"
+    type="revolute">
+    <origin
+      xyz="0.0119556565820659 0 -0.0153997083546931"
+      rpy="3.14159265358979 1.5707963267949 0" />
+    <parent
+      link="youtui5" />
+    <child
+      link="youtui6" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="zuotui1">
+    <inertial>
+      <origin
+        xyz="2.03256717776212E-08 -0.04342056242832 0.0364750815139543"
+        rpy="0 0 0" />
+      <mass
+        value="0.119463468383065" />
+      <inertia
+        ixx="3.3248779446718E-05"
+        ixy="3.77789839744121E-11"
+        ixz="-4.1032068271912E-12"
+        iyy="3.34321679277658E-05"
+        iyz="2.59690075020193E-06"
+        izz="2.77342122624497E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/zuotui1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/zuotui1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="zuotui1"
+    type="revolute">
+    <origin
+      xyz="-0.0749999594980665 -0.00836285444900986 -0.237429264502804"
+      rpy="3.14159265358979 0 -3.14159265358979" />
+    <parent
+      link="body" />
+    <child
+      link="zuotui1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="zuotui2">
+    <inertial>
+      <origin
+        xyz="0.002430396232739 0.00118546404909842 0.032405868093409"
+        rpy="0 0 0" />
+      <mass
+        value="0.250906808479768" />
+      <inertia
+        ixx="7.75429487607742E-05"
+        ixy="8.08307645672026E-07"
+        ixz="-4.51051127201841E-07"
+        iyy="5.92607366752294E-05"
+        iyz="-1.57238211382203E-06"
+        izz="5.83373841213256E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/zuotui2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/zuotui2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="zuotui2"
+    type="revolute">
+    <origin
+      xyz="0 -0.0387571455509903 0.052570735497196"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="zuotui1" />
+    <child
+      link="zuotui2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="zuotui3">
+    <inertial>
+      <origin
+        xyz="-0.00454616097902205 0.056644873354199 -0.0146635956296256"
+        rpy="0 0 0" />
+      <mass
+        value="0.109881075271107" />
+      <inertia
+        ixx="0.000268297743624148"
+        ixy="2.02738279234041E-05"
+        ixz="1.36053255502878E-09"
+        iyy="1.73142690323192E-05"
+        iyz="-1.69522339701082E-08"
+        izz="0.000285075485406577" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/zuotui3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/zuotui3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="zuotui3"
+    type="revolute">
+    <origin
+      xyz="-0.0170499999999989 0 0.0400000000000003"
+      rpy="3.14159265358979 1.5707963267949 0" />
+    <parent
+      link="zuotui2" />
+    <child
+      link="zuotui3" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="zuotui4">
+    <inertial>
+      <origin
+        xyz="0.00749552547359267 -0.073987941488397 0.0121473582706518"
+        rpy="0 0 0" />
+      <mass
+        value="0.274677354729084" />
+      <inertia
+        ixx="9.78126199846546E-05"
+        ixy="-3.53993298483733E-08"
+        ixz="1.16803908483987E-13"
+        iyy="5.54503910551168E-05"
+        iyz="4.91838838066308E-12"
+        izz="0.000103347216728136" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/zuotui4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/zuotui4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="zuotui4"
+    type="revolute">
+    <origin
+      xyz="-0.0120000000000001 0.149519229532525 -0.0292"
+      rpy="0 0 3.14159265358979" />
+    <parent
+      link="zuotui3" />
+    <child
+      link="zuotui4" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="zuotui5">
+    <inertial>
+      <origin
+        xyz="1.65091979531518E-07 1.04242646736807E-08 -0.0155003545428507"
+        rpy="0 0 0" />
+      <mass
+        value="0.00886465357060083" />
+      <inertia
+        ixx="2.2627009387598E-07"
+        ixy="-8.86876892975052E-13"
+        ixz="8.25154846048955E-14"
+        iyy="9.7262520137339E-07"
+        iyz="-1.33615017367978E-12"
+        izz="1.00364671071319E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/zuotui5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/zuotui5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="zuotui5"
+    type="revolute">
+    <origin
+      xyz="0 -0.159999999999994 -0.00334999999999118"
+      rpy="3.14159265358979 0 0" />
+    <parent
+      link="zuotui4" />
+    <child
+      link="zuotui5" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="zuotui6">
+    <inertial>
+      <origin
+        xyz="2.26743914706617E-07 -0.01856898089682 -0.0117555183802771"
+        rpy="0 0 0" />
+      <mass
+        value="0.174974482297595" />
+      <inertia
+        ixx="0.000209967172958913"
+        ixy="7.2041133226802E-11"
+        ixz="2.10832359413523E-09"
+        iyy="0.000270553787681551"
+        iyz="2.41700460372122E-06"
+        izz="6.73099044401142E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/zuotui6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://livelybot_urdf/meshes/zuotui6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="zuotui6"
+    type="revolute">
+    <origin
+      xyz="0.0119556565820631 0 -0.0155002916453069"
+      rpy="3.14159265358979 1.5707963267949 0" />
+    <parent
+      link="zuotui5" />
+    <child
+      link="zuotui6" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
 </robot>
