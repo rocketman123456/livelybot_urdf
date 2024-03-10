@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.3)
 
-project(livelybot_urdf)
+project(model_H)
 
 find_package(catkin REQUIRED)
 
