@@ -1,5 +1,5 @@
 <package format="2">
-  <name>model_H</name>
+  <name>livelybot_urdf</name>
   <version>1.0.0</version>
   <description>
     <p>URDF Description package for model_H</p>
